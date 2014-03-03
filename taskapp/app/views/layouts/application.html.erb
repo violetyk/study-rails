@@ -8,7 +8,21 @@
 </head>
 <body>
 
+<%
+# イメージタグヘルパー
+# app/assets/images/を見に行く
+%>
+<%= image_tag "logo.png" %>
+
 <%= yield %>
+
+<%= link_to "Home" , '/' %>
+
+<%
+# rake routs で確認できる名前 + _path
+%>
+<%= link_to "Home" , projects_path %>
+<%= link_to "New" , new_project_path %>
 
 </body>
 </html>
