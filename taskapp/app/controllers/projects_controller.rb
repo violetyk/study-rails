@@ -63,7 +63,7 @@ class ProjectsController < ApplicationController
     # 外から受け取ったパラメータを許可しフィルタリングをしてあげる mass assignment対策
     # params[:project].permit(:title)
     # requireメソッドは、そのパラメータがないと例外をはくメソッド
-    params.require(:project).permit(:title)
+    params.require(:project).permit(:title, :avatar)
   end
 
   def set_project

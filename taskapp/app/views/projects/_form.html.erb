@@ -1,10 +1,12 @@
-<%= form_for @project do |f| %>
+<%= form_for @project, :html => { multipart: true } do |f| %>
  <p>
   <%= f.label :title %><br>
   <%= f.text_field :title %>
   <% if @project.errors.any? %>
     <%= @project.errors.messages[:title][0] %>
   <% end %>
+  <%= f.file_field :avatar %>
+
  </p>
  <p>
   <%= f.submit %>
