@@ -10,18 +10,18 @@ class Project < ActiveRecord::Base
   # presence:は名前付き引数。
   # validates(:title, presence: true)
 
-  # paperclipを使って画像アップロードを作ってみる
-  # has_attached_file :avatar,
-    # styles: { medium: "300x300>", thumb: "100x100>" },
-    # default_url: "/images/:style/missing.png"
-
-  # aws s3
   has_attached_file :avatar,
     styles: { medium: "300x300>", thumb: "100x100>" },
-    path: ":attachment/:id/:style/:filename",
     default_url: "/images/:style/missing.png",
-    storage: :s3,
-    s3_credentials: "#{Rails.root}/config/s3.yml"
+    url: "#{ActionController::Base.relative_url_root}/system/:attachment/:hash/:id.:extension"
+
+  # aws s3
+  # has_attached_file :avatar,
+    # styles: { medium: "300x300>", thumb: "100x100>" },
+    # path: ":attachment/:id/:style/:filename",
+    # default_url: "/images/:style/missing.png",
+    # storage: :s3,
+    # s3_credentials: "#{Rails.root}/config/s3.yml"
 
   validates_attachment_content_type :avatar,
     content_type: /\Aimage\/.*\Z/

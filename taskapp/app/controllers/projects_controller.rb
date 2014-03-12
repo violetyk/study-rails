@@ -1,3 +1,5 @@
+require 'rails-var-dump'
+
 class ProjectsController < ApplicationController
 
   # 全部のメソッドに効かせる場合
@@ -30,7 +32,14 @@ class ProjectsController < ApplicationController
     # Rails.logger.error permitted_params
 
     @project = Project.new(permitted_params)
+    # p @project.avatar.url
+    # p @project.avatar.path
+
     if @project.save
+
+    p @project.avatar.url
+    p @project.avatar.path
+
       redirect_to projects_path
     else
       render 'new'

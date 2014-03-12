@@ -43,3 +43,18 @@ gem 'spring',        group: :development
 # image upload
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
+
+group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  # gem 'pry-rails'
+  # gem 'pry-doc'
+  gem 'rack-var-dump'
+end
+
+
+# activeadmin
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+gem 'activeadmin', github: 'gregbell/active_admin'
