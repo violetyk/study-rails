@@ -72,7 +72,7 @@ class BookList
       end
     else
       result = []
-      # ブロック突き出ない場合に、配列を返す
+      # ブロックつきではない場合に、配列を返す
       @booklist.each do |book|
         if author =~ book.author
           result << book # result.push(book)とおなじ
